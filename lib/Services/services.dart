@@ -18,8 +18,10 @@ class Services {
           value: response.data['value'],
         );
       }
-    } catch (e) {
+    } on DioError catch (e) {
       // TODO
+      debugPrint(e.response!.data);
+    } catch (e) {
       debugPrint(e.toString());
     }
   }
